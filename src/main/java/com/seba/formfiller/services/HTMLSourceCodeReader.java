@@ -20,7 +20,7 @@ public class HTMLSourceCodeReader {
   }
 
   private static Map<Integer, String> toString(InputStream inputStream) throws IOException {
-    Map<Integer, String> mapOfImputFields = new HashMap<>();
+    Map<Integer, String> mapOfInputFields = new HashMap<>();
     String inputLine;
     int key = 0;
 
@@ -32,13 +32,13 @@ public class HTMLSourceCodeReader {
                         inputLine.contains("type=\"password\"")
         )
         ) {
-          mapOfImputFields.put(key++, idRetriver(inputLine));
+          mapOfInputFields.put(key++, idRetriver(inputLine));
         }
       }
     } catch (IOException e) {
       e.printStackTrace();
     }
-    return mapOfImputFields;
+    return mapOfInputFields;
   }
 
   private static String idRetriver(String input) {
